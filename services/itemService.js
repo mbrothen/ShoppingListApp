@@ -66,6 +66,7 @@ module.exports.getItemList = async (serviceData) => {
         let responseFromDatabase = await crudRepository.find(data);
         switch (responseFromDatabase.status) {
             case constants.databaseStatus.ENTITY_FETCHED:
+                console.log('Response Obj: ', responseObj);
                 responseObj.body = responseFromDatabase.result;
                 responseObj.status = constants.serviceStatus.ITEM_LIST_FETCHED_SUCCESSFULLY;
                 break;

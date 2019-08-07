@@ -13,7 +13,7 @@ export class ShoppingListComponent implements OnInit {
   shoppingList: any = [];
   loading = true;
   dataSource: any;
-  displayedColumns = ['item', 'itemDescription', 'shoppingListQty', 'operations', 'purchased'];
+  displayedColumns = ['item', 'itemDescription', 'shoppingListQty', 'operations'];
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;

@@ -1,0 +1,82 @@
+{
+    "status": 200,
+    "message": "User list fetched successfully",
+    "body": [
+        {
+            "_id": "5d1fa7063aeb5249aaafaf2f",
+            "name": "bob johnson",
+            "password": "123456",
+            "phone": 2624120030,
+            "__v": 0
+        },
+        {
+            "_id": "5d208a78aeec7c603204e9d8",
+            "name": "Matt Brothen",
+            "password": "password",
+            "phone": 2624120030,
+            "__v": 0
+        },
+        {
+            "_id": "5d20d16554c1cd7310a4445a",
+            "name": "LIAM BROTHEN",
+            "password": "L Brothen",
+            "phone": 2626943169,
+            "__v": 0
+        },
+        {
+            "_id": "5d20d17454c1cd7310a4445b",
+            "name": "Natalie Brothen",
+            "password": "natalieb",
+            "phone": 2626943169,
+            "__v": 0
+        },
+        {
+            "_id": "5d224c3c1d237b66e80ac074",
+            "username": "Matthew Brothen",
+            "password": "mbrothen",
+            "name": "Matthew Brothen",
+            "email": "mbrothen@gmail.com",
+            "__v": 0
+        },
+        {
+            "_id": "5d224d6be496b867eb238349",
+            "username": "Matthew Brothen",
+            "password": "mbrothen",
+            "name": "Matthew Brothen",
+            "email": "mbrothen@gmail.com",
+            "__v": 0
+        },
+        {
+            "_id": "5d224d7ee496b867eb23834a",
+            "username": "Matthew Brothen",
+            "password": "mbrothen",
+            "name": "Matthew Brothen",
+            "email": "mbrothen@gmail.com",
+            "__v": 0
+        },
+        {
+            "_id": "5d224d9c6010bb681bba65a7",
+            "username": "mbrothen2",
+            "password": "mbrothen",
+            "name": "Matthew Brothen",
+            "email": "mbrothen@gmail.com",
+            "__v": 0
+        },
+        {
+            "_id": "5d228a21f886387018e68314",
+            "username": "hashtest",
+            "name": "Hash Test",
+            "email": "hashtest@gmail.com",
+            "__v": 0
+        },
+        {
+            "_id": "5d228a90a51d1a70609f0d24",
+            "username": "hashtest",
+            "name": "Hash Test",
+            "email": "hashtest@gmail.com",
+            "__v": 0
+        }
+    ]
+}
+
+$2b$10$seP2IM6cprW/hwACoapVwO8HMwM/yCfyHqgKmVg8a0B8yb7Cbo4ly

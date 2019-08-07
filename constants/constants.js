@@ -19,12 +19,18 @@ module.exports = {
 
     }, 
     serviceStatus: {
+        HASH_FAILURE: 'Failed to hash password',
+        INVALID_CREDINTIALS: 'Name or password is incorrect',
+        INVALID_USERNAME: 'Username not found',
+        IVNALID_PASSWORD: 'Incorrect passsword entered',
+        ITEM_CREATED_SUCCESSFULLY: 'Item created successsfully',
+        ITEM_LIST_FETCHED_SUCCESSFULLY: 'Item list fetched scuccessfully',
+        ITEM_LIST_QTY_UPDATED_SUCCESSFULLY: 'Item list qty updated successfully',
         USER_CREATED_SUCCESSFULLY: 'User created successfully',
         USER_LIST_FETCHED_SUCCESSFULLY: 'User list fetched successfully',
         USER_FETCHED_SUCCESSFULLY: 'User detail fetched successfully',
         USER_UPDATED_SUCCESSFULLY: 'User updated successfully',
         USER_DELETED_SUCCESSFULLY: 'User has been deleeted successfully',
         USER_AUTHENTICATED_SUCCESSFULLY: 'User has been authenticated successfully',
-        INVALID_CREDINTIALS: 'Name or password is incorrect'
     }
 };

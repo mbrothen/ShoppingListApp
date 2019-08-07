@@ -40,6 +40,9 @@ module.exports.insertData = (data) => {
     });
 };
 
+    /* 
+    Might switch to find user first, then verify password.  This will allow hashing to happen when user is searched speeding up program
+    */
 module.exports.find = (data) => {
     return new Promise((resolve, reject) => {
         console.log('Find Data called');
@@ -63,11 +66,37 @@ module.exports.find = (data) => {
     });
 };
 
+module.exports.findOne = (data) => {
+    return new Promise((resolve, reject) => {
+        console.log('Find One Data called');
+        try {
+            console.log('FIND ONE: data.query', data.findOneQuery);
+            data.model.findOne(data.findOneQuery.query).then(docs => {
+                console.log('docs', docs);
+                resolve({
+                    result: docs,
+                    status: constants.databaseStatus.ENTITY_FETCHED
+                });
+            }).catch (err => {
+                //error
+                reject({
+                    error: err.message,
+                    status: constants.databaseStatus.DATABSE_ERROR
+                });
+                
+            });
+        } catch(err) {
+            console.log('Database find one error: Crud Repository', err);
+        }
+    });
+};
+
 module.exports.findOneAndUpdate = (data) => {
     return new Promise((resolve, reject) => {
         try {
-            data.model.findOneAndUpdate(data.findQuery, data.updateQuery).then(docs => {
+            data.model.findOneAndUpdate(data.findQuery, data.updateQuery, {new: true}).then(docs => {
                 //success
+                console.log('DOCS: ', docs);
                 resolve({
                     result: docs,
                     status: constants.databaseStatus.ENTITY_MODIFIED

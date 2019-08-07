@@ -15,6 +15,8 @@ crudReposity.createConnection();
 
 app.use('/api/v1/user', require('./routes/userRoutes'));
 
+app.use('/api/v1/item', require('./routes/itemRoutes'));
+
 app.use('/profile', (req, res, next) => {
     res.send('<h2>Hello</h2>');
 });

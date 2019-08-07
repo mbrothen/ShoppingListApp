@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+    <h2>Pantry List</h2>
+    <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
+
+    <mat-table [style.display]="loading === false ? 'block' : 'none'" #table [dataSource]="dataSource" matSort>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>       
+
+<!--Use MatTableDataSource for actual implementation-->
+
+    <ng-container matColumnDef="item">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Item
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item"> 
+            {{item.itemName}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="itemDescription">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Description
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+            {{item.itemDescription}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="pantryListQty"> 
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            List Qty
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+            {{item.pantryListQty}}
+        </mat-cell>
+    </ng-container>
+<!-- Modify this part to add increases decrease and delete-->
+    <ng-container  matColumnDef="operations">
+
+        <mat-header-cell *matHeaderCellDef  mat-sort-header> Operations </mat-header-cell>
+        
+        <mat-cell *matCellDef="let element">  <button  mat-button  color="primary" (click)="listQtyChange(element._id, -1)"><mat-icon>minus</mat-icon>
+        
+        </button>  <button  mat-button  color="primary" (click)="listQtyChange(element._id, 1)"><mat-icon>plus</mat-icon></button>  </mat-cell>
+
+    </ng-container>
+
+<mat-paginator #paginator [style.display]="loading === false ? 'block' : 'none'" [pageSize]="5"></mat-paginator>
+</mat-table>
+<a mat-fab routerLink="/create-item">+</a>
+</div>

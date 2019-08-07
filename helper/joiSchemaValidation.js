@@ -45,8 +45,11 @@ module.exports = {
     validatePathParams: (schema) => {
         return (req, res, next) => {
             console.log('Validating parameters');
+            console.log('req.params: ', req.params);
+            console.log('schema: ', schema);
             const result = Joi.validate(req.params, schema);
-            if(result.error) {
+            console.log('result', result);
+            if(result.error && result.error !== null) {
                 let errorDetail = result.error.details.map((value) => {
                     return {
                         error: value.message,

@@ -23,14 +23,6 @@ router.put('/changeItemQty/:itemId',
     joiSchemaValidation.validateBody(itemSchema.changeItemQuantitySchema),
     itemController.changeItemQty
     );
-/*
-//Update an item  Changes item attributes, not list totals
-router.put('/update/:itemId',
-    tokenValidation.validateToken(),
-    joiSchemaValidation.validatePathParams(itemSchema.updateItemPathParamSchema),
-    joiSchemaValidation.validateBody(itemSchema.updateItemSchema),
-    itemController.updateItem);
-*/
 
 // Grab the item list or pantry list
 // Send 'pantryList' or 'itemList' in json.  expandable to user created lists in the future
@@ -39,10 +31,4 @@ router.post('/itemList',
     joiSchemaValidation.validateQueryParams(itemSchema.getItemListSchema),
     itemController.getItemList);
 
-/*
-router.delete('/remove/:itemId',
-    tokenValidation.validateToken(),
-    joiSchemaValidation.validatePathParams(itemSchema.deleteItemPathParamSchema),
-    itemController.deleteItem);
-*/
 module.exports = router;

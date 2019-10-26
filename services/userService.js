@@ -211,45 +211,6 @@ const compareHashedPasswords = async (serviceData, responseFromDatabase) => {
             }
     });
 };
-/*
-NEED TO SWITCH TO BCRYPT.COMPARE.  Search username to find doc, get pass then compare to password.  Previous method does not work with encryption.
-module.exports.authenticateUser = async (serviceData) => {
-    let responseObj = {};
-    try {
-        let data = {
-            findOneQuery: {
-                query: {
-                    username: serviceData.username,
-                    password: serviceData.password
-                }
-            },
-            model: User,
-        };
-        console.log('data.findQuery.query: ', data.findOneQuery.query);
-        let responseFromDatabase = await crudRepository.findOne(data);
-        console.log('userID: ', responseFromDatabase.result); //Trying to find userId to add to token
-        let userId = responseFromDatabase.result._id; //adding id to token to use with requests to tablesclear
-        if (responseFromDatabase.status === constants.databaseStatus.ENTITY_FETCHED && responseFromDatabase.result) {
-            const token = jwt.sign({
-                userType: 'user',
-                userId: userId
-            }, process.env.SECRET_KEY); //Add user id# to jwt to retreive specifc lists 
-            responseObj.status = constants.serviceStatus.USER_AUTHENTICATED_SUCCESSFULLY;
-            responseObj.body = {
-                "token": token
-            };
-        } else {
-            console.log('invalid credentials :(');
-            responseObj.status = constants.serviceStatus.INVALID_CREDINTIALS;
-            responseObj.body = {};
-        }
-
-        return responseObj;
-    } catch (err) {
-        console.log('Something went wrong: Service: authenticate user:', err);
-        return responseObj = constants.responseObj;
-    }
-};*/
 
 module.exports.hashPassword = async (serviceData) => {
     const hashedPassword = '';

@@ -27,28 +27,6 @@ const changeItemQuantitySchema = Joi.object().keys({
     shoppingListQty: Joi.number().optional(),
     pantryListQty: Joi.number().optional()
 });
-/*
-const getItemDetailPathParamSchema = Joi.object().keys({
-    itemId: Joi.string().required()
-});
-
-const updateItemPathParamSchema = Joi.object().keys({
-    userId: Joi.string().required(),
-    list: Joi.string().valid('shoppingList', 'pantryList')
-});
-
-const updateItemrSchema = Joi.object().keys({
-    itemName: Joi.string().optional(),
-    itemDescription: Joi.string().optional(),
-    itemCategory: Joi.string().optional(),
-    purchaseDates: Joi.alternatives().try(Joi.array().items(Joi.date()), Joi.string()).optional(),
-    usedDates: Joi.alternatives().try(Joi.array().items(Joi.date()), Joi.string()).optional(),
-    shopplingListQty: Joi.number().optional(),
-    pantryListQty: Joi.number().optional()
-});
-
-
-*/
 
 module.exports = {
     'createItemSchema': createItemSchema,

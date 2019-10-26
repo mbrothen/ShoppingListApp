@@ -4,6 +4,7 @@ const itemController = require('../controller/itemController');
 const joiSchemaValidation = require('../helper/joiSchemaValidation');
 const itemSchema = require('../models/api/itemSchema');
 const tokenValidation = require('../helper/tokenValidation');
+const passport = require('passport');
 
 //Add Item to either list, pass which list in the schema
 router.post('/addItem', 
